@@ -17,7 +17,7 @@ veiculo = int(input("""Qual o seu veículo?
 [3] - CAMINHÃO 
 """))
 
-if local == 1:
+if local == 1: #RJ
     if veiculo == 1:
         ano_moto_rj = int(input("Qual o ano da sua moto?: "))
         if ano_moto_rj >= 2011:  
@@ -39,28 +39,28 @@ if local == 1:
         else:
             print("O seu caminhão não necessita de pagamento, tendo em vista que está isento pela idade.")    
 
-elif local == 2:
+elif local == 2: #SP
     
     if veiculo == 1: 
         ano_moto_sp = int(input("Qual o ano da sua moto?: "))
         if ano_moto_sp >= 2007:
             aliquota_moto = 0.02
         else:
-            print("Sua moto não nessecita de pagamento, tendo em vista que está insento pela idade.") 
+            print("Sua moto não necessita de pagamento, tendo em vista que está isento pela idade.") 
     
     elif veiculo == 2:
-        ano_carro_sp = int(input("Qual o ano da sua moto?: "))
+        ano_carro_sp = int(input("Qual o ano do seu carro?: "))
         if ano_carro_sp >= 2007:       
             aliquota_carro = 0.04
         else:
-            print("Seu carro não necessita de pagamento, tendo em vista que está insento pela idade.")    
+            print("Seu carro não necessita de pagamento, tendo em vista que está isento pela idade.")    
     
     elif veiculo == 3:
         ano_caminhao_sp = int(input("Qual o ano do seu caminhão?: "))
         if ano_caminhao_sp >= 2007: 
             aliquota_caminhao = 0.015
         else:
-            print("Seu caminhão não necessita de pagamento, tendo em vista que está insento pela idade.") 
+            print("Seu caminhão não necessita de pagamento, tendo em vista que está isento pela idade.") 
 
 elif local == 3:
     
@@ -69,21 +69,21 @@ elif local == 3:
         if ano_moto_df >= 2011: 
             aliquota_moto = 0.02
         else:
-            print("Sua moto não necessita de pagamento, tendo em vista que está inseto pela idade.")
+            print("Sua moto não necessita de pagamento, tendo em vista que está isento pela idade.")
 
     elif veiculo == 2:
         ano_carro_df = int(input("Qual o ano do seu carro?: "))
         if ano_carro_df >= 2011:
             aliquota_carro = 0.03
         else: 
-            print("Seu carro não necessita de pagamento, tendo em vista que está insento pela idade.")
+            print("Seu carro não necessita de pagamento, tendo em vista que está isento pela idade.")
 
     elif veiculo == 3:
         ano_caminhao_df = int(input("Qual o ano do seu caminhão?: "))
         if ano_caminhao_df >= 2011:            
             aliquota_caminhao = 0.01
         else:
-            print("Seu caminhão está insento de pagamento, tendo em vista que está insento pela idade.")    
+            print("Seu caminhão não necessita de pagamento, tendo em vista que está isento pela idade.")    
 
 elif local == 4:
     
@@ -92,21 +92,21 @@ elif local == 4:
         if ano_moto_bahia >= 2011:
             aliquota_moto = 0.01
         else:
-            print("Sua moto está insento de pagamento, tendo em vista que está insento pela idade.")
+            print("Sua moto não necessita de pagamento, tendo em vista que está isento pela idade.")
     
     elif veiculo == 2:
-        ano_carro_bahia = int(input("Qual o ano do seu carro?"))   
+        ano_carro_bahia = int(input("Qual o ano do seu carro?: "))   
         if ano_carro_bahia >= 2011:        
             aliquota_carro = 0.025
         else:
-            print("Sua carro está insento de pagamento, tendo em vista que está insento pela idade.")
+            print("Seu carro não necessita de pagamento, tendo em vista que está isento pela idade.")
     
     elif veiculo == 3:
         ano_caminhao_bahia = int(input("Qual o ano do seu caminhão?: "))
         if ano_caminhao_bahia >= 2011:
             aliquota_caminhao = 0.01
         else:
-            print("Seu caminhão está insento de pagamento, tendo em vista que está insento pela idade.")
+            print("Seu caminhão não necessita de pagamento, tendo em vista que está isento pela idade.")
 aliquota = 0
 
 if aliquota_moto > 0:
