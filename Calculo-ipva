@@ -1,0 +1,125 @@
+#Sistema de cálculo de IPVA baseado em localidade, ano e tabela fipe:
+
+aliquota_moto = 0 
+aliquota_carro = 0
+aliquota_caminhao = 0
+
+local = int(input("""Qual localidade você quer saber?
+[1] - RIO  DE JANEIRO
+[2] - SÃO PAULO
+[3] - BRASÍLIA
+[4] - BAHIA
+"""))
+
+veiculo = int(input("""Qual o seu veículo?
+[1] - MOTO
+[2] - CARRO
+[3] - CAMINHÃO 
+"""))
+
+if local == 1:
+    if veiculo == 1:
+        ano_moto_rj = int(input("Qual o ano da sua moto?: "))
+        if ano_moto_rj >= 2011:  
+            aliquota_moto = 0.02
+        else:
+            print("Sua moto não necessita de pagamento, tendo em vista que está isento pela idade.")    
+    
+    elif veiculo == 2:
+        ano_carro_rj = int(input("Qual o ano do seu carro?: "))
+        if ano_carro_rj >= 2011:
+            aliquota_carro = 0.04
+        else:
+            print("Seu carro não necessita de pagamento, tendo em vista que está isento pela idade.")
+    
+    elif veiculo == 3:
+        ano_caminhao_rj = int(input("Qual o ano do seu caminhão?: "))
+        if ano_caminhao_rj >= 2011:         
+            aliquota_caminhao = 0.01
+        else:
+            print("O seu caminhão não necessita de pagamento, tendo em vista que está isento pela idade.")    
+
+elif local == 2:
+    
+    if veiculo == 1: 
+        ano_moto_sp = int(input("Qual o ano da sua moto?: "))
+        if ano_moto_sp >= 2007:
+            aliquota_moto = 0.02
+        else:
+            print("Sua moto não nessecita de pagamento, tendo em vista que está insento pela idade.") 
+    
+    elif veiculo == 2:
+        ano_carro_sp = int(input("Qual o ano da sua moto?: "))
+        if ano_carro_sp >= 2007:       
+            aliquota_carro = 0.04
+        else:
+            print("Seu carro não necessita de pagamento, tendo em vista que está insento pela idade.")    
+    
+    elif veiculo == 3:
+        ano_caminhao_sp = int(input("Qual o ano do seu caminhão?: "))
+        if ano_caminhao_sp >= 2007: 
+            aliquota_caminhao = 0.015
+        else:
+            print("Seu caminhão não necessita de pagamento, tendo em vista que está insento pela idade.") 
+
+elif local == 3:
+    
+    if veiculo == 1:
+        ano_moto_df = int(input("Qual o ano da sua moto?: "))    
+        if ano_moto_df >= 2011: 
+            aliquota_moto = 0.02
+        else:
+            print("Sua moto não necessita de pagamento, tendo em vista que está inseto pela idade.")
+
+    elif veiculo == 2:
+        ano_carro_df = int(input("Qual o ano do seu carro?: "))
+        if ano_carro_df >= 2011:
+            aliquota_carro = 0.03
+        else: 
+            print("Seu carro não necessita de pagamento, tendo em vista que está insento pela idade.")
+
+    elif veiculo == 3:
+        ano_caminhao_df = int(input("Qual o ano do seu caminhão?: "))
+        if ano_caminhao_df >= 2011:            
+            aliquota_caminhao = 0.01
+        else:
+            print("Seu caminhão está insento de pagamento, tendo em vista que está insento pela idade.")    
+
+elif local == 4:
+    
+    if veiculo == 1:
+        ano_moto_bahia = int(input("Qual o ano da sua moto?: "))
+        if ano_moto_bahia >= 2011:
+            aliquota_moto = 0.01
+        else:
+            print("Sua moto está insento de pagamento, tendo em vista que está insento pela idade.")
+    
+    elif veiculo == 2:
+        ano_carro_bahia = int(input("Qual o ano do seu carro?"))   
+        if ano_carro_bahia >= 2011:        
+            aliquota_carro = 0.025
+        else:
+            print("Sua carro está insento de pagamento, tendo em vista que está insento pela idade.")
+    
+    elif veiculo == 3:
+        ano_caminhao_bahia = int(input("Qual o ano do seu caminhão?: "))
+        if ano_caminhao_bahia >= 2011:
+            aliquota_caminhao = 0.01
+        else:
+            print("Seu caminhão está insento de pagamento, tendo em vista que está insento pela idade.")
+aliquota = 0
+
+if aliquota_moto > 0:
+    aliquota = aliquota_moto
+    tipo = "moto"
+elif aliquota_carro > 0:
+    aliquota = aliquota_carro
+    tipo = "carro"
+elif aliquota_caminhao > 0:
+    aliquota = aliquota_caminhao
+    tipo = "caminhão"
+
+if aliquota > 0:
+    valor_veiculo = float(input(f"Informe o valor da {tipo}: R$ "))
+    ipva = valor_veiculo * aliquota
+    print(f"O valor do IPVA da {tipo} é: R$ {ipva:.2f}")
